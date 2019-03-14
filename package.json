@@ -1,0 +1,24 @@
+{
+  "name": "akc23",
+  "version": "1.0.0",
+  "description": "My kickass Nuxt.js project",
+  "author": "izm51",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "box-intersect": "^1.0.2",
+    "cross-env": "^5.2.0",
+    "easing-functions": "^1.0.1",
+    "node-sass": "^4.11.0",
+    "nuxt": "^2.4.0",
+    "sass-loader": "^7.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
