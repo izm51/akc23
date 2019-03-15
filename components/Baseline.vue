@@ -24,7 +24,7 @@ export default {
 .base {
   width: 100%;
   height: 80px;
-  background: #444;
+  background: #403f41;
   position: absolute;
   top: 50%;
 }

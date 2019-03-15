@@ -60,6 +60,7 @@ export default {
       },
       items: [],
       itemList: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22'],
+      // itemList: ['0']
     }
   },
   computed: {
@@ -146,7 +147,7 @@ export default {
             this.$data.itemList.splice(index, 1)
 
             // 進化判定
-            if ([16, 9, 0].indexOf(this.itemList.length) != -1) {
+            if ([17, 9, 0].indexOf(this.itemList.length) != -1) {
               this.partner.status = 'stop'
             }
           } else {
@@ -220,6 +221,10 @@ export default {
   width: 100vw;
   max-width: 100vw;
   overflow: hidden;
+  background-color: #e49e68;
+  background-image: url("~assets/img/wood-pattern.png");
+  background-size: 150px;
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 .countdown {
   position: absolute;
@@ -228,8 +233,8 @@ export default {
   transform: translate(-50%, -50%);
   width: 60vw;
   height: 60vw;
-  background: #fff;
-  border: 1px #000 solid;
+  // background: #fff;
+  border: 3px #000 solid;
   border-radius: 50%;
   line-height: 60vw;
   font-size: 35vw;
