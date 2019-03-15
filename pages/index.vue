@@ -43,12 +43,11 @@ export default {
     transform: translate(-50%, -50%);
     width: 90%;
     text-align: center;
-    padding-bottom: 30px;
     img {
       width: 100%;
     }
     .text {
-      margin: 30px;
+      margin: 30px 0;
     }
     .start-buttons {
       .level-button {

@@ -7,8 +7,12 @@
 
     <div class="score">score: {{score}}</div>
 
+    <baseline ref="baseline"
+      :x="-100" :y="vh-60" :s="1" :w="vw+200"
+    ></baseline>
+
     <player ref="player"
-      :x="playerPos.x" :y="playerPos.y" :s="playerPos.s"
+      :x="playerPos.x" :y="playerPos.y" :s="playerPos.s" :mode="partner.mode"
     ></player>
 
     <partner ref="partner"
@@ -21,9 +25,9 @@
       @hitBaseline="(BaselineComp) => onItemHitBaseline(item, BaselineComp)"
     ></item>
 
-    <baseline ref="baseline"
-      :x="-100" :y="vh-60" :s="1" :w="vw+200"
-    ></baseline>
+    <fragment v-for="fragment in fragments" ref="fragment" :key="`fragment-${fragment.id}`"
+      :x="fragment.pos.x" :y="fragment.pos.y" :s="fragment.pos.s" :type="fragment.frag"
+    ></fragment>
 
     <result v-if="partner.status=='end'" :score="score"></result>
 
@@ -36,16 +40,18 @@ import Partner from '@/components/Partner'
 import Item from '@/components/Item'
 import Baseline from '@/components/Baseline'
 import Result from '@/components/Result'
+import Fragment from '@/components/Fragment'
 import CollisionDetector from '@/core/CollisionDetector'
 import Tween from '@/core/Tween'
 export default {
   components: {
-    Player, Partner, Item, Baseline, Result
+    Player, Partner, Item, Baseline, Result, Fragment
   },
   data () {
     return {
       collisionDetector: new CollisionDetector(),
       countdown: 3,
+      gameTimer: 0,
       time: 0,
       score: 0,
       level: 'hard',
@@ -60,7 +66,7 @@ export default {
       },
       items: [],
       itemList: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22'],
-      // itemList: ['0']
+      fragments: [],
     }
   },
   computed: {
@@ -127,6 +133,7 @@ export default {
     getItem(type) {
       console.log("get! ", type)
       this.score++
+      this.addFragment('get')
     },
     lostItem(type) {
       console.log("lost! ", type)
@@ -134,6 +141,22 @@ export default {
     negiDamege() {
       console.log("neginegi~~")
       this.score--
+      this.addFragment('negi')
+    },
+    async addFragment(frag) {
+      const id = Math.floor(Math.random() * 100000)
+      const fragment = { id, pos: { x: this.playerPos.x + 20, y: this.playerPos.y - 20, s: 1}, frag: frag }
+      this.$data.fragments.push(fragment)
+      fragment.tw = new Tween(fragment.pos)
+      const isFin = await fragment.tw.to({ x: this.playerPos.x + 40, y: this.playerPos.y - 40}, 500)
+      if (isFin) {
+        this.removeFragment(fragment)
+      }
+    },
+    removeFragment(fragmentData) {
+      const index = this.$data.fragments.indexOf(fragmentData)
+      if (index === -1) {return}
+      this.$data.fragments.splice(index, 1)
     },
     async throwItemTiming() {
       const throwItemInterval = this.throwSpeed[this.level][0] + Math.random() * 1000
@@ -201,7 +224,7 @@ export default {
       this.checkCollision()
     },
     gameStart() {
-      const gameTimer = setInterval(this.gameTick, 10)
+      this.gameTimer = setInterval(this.gameTick, 10)
 
       this.movePartner()
       this.throwItemTiming()
@@ -210,7 +233,10 @@ export default {
       this.partner.status = 'end'
       console.log("GAME SET!")
       console.log(this.score + "歳おめでとう！")
-    }
+    },
+  },
+  beforeDestroy () {
+    window.clearInterval(this.gameTimer)
   }
 }
 </script>

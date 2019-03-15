@@ -64,7 +64,7 @@ export default {
     line-height: 40px;
     margin: 25px auto;
     // background: #fff;
-    border: 2px #403f41 solid;
+    border: 2px #000 solid;
     border-radius: 5px;
     font-weight: bold;
     transition: opacity 1.5s ease 1.5s;
