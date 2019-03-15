@@ -10,13 +10,13 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'あけちを祝イズミ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0, user-scalable=no' },
       { name: 'mobile-web-app-capable', content: 'yes'},
       { name: 'apple-mobile-web-app-capable', content: 'yes'},
-      { hid: 'description', name: 'description', content: pkg.title }
+      { hid: 'description', name: 'description', content: '-あけちを祝イズミ- あけちの23歳の誕生日を祝う優しいイマイズミのゲーム' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

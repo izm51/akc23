@@ -15,6 +15,7 @@
         <div class="level-button" @click="$router.push('/game?level=veryhard')">VERYHARD</div>
       </div>
     </div>
+    <div class="version">ver 1.01</div>
   </div>
 </template>
 
@@ -61,6 +62,11 @@ export default {
         font-size: 24px;
       }
     }
+  }
+  .version {
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 }
 </style>

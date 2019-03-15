@@ -6,6 +6,7 @@
     </div>
 
     <div class="score">score: {{score}}</div>
+    <div class="level">{{level}}</div>
 
     <baseline ref="baseline"
       :x="-100" :y="vh-60" :s="1" :w="vw+200"
@@ -265,5 +266,10 @@ export default {
   line-height: 60vw;
   font-size: 35vw;
   text-align: center;
+}
+.level {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 </style>
