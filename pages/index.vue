@@ -1,6 +1,10 @@
 <template>
   <div class="main">
     <div @click="$router.push('/game')">START</div>
+    <div @click="$router.push('/game?level=easy')">EASY</div>
+    <div @click="$router.push('/game?level=normal')">NORMAL</div>
+    <div @click="$router.push('/game?level=hard')">HARD</div>
+    <div @click="$router.push('/game?level=veryhard')">VERYHARD</div>
   </div>
 </template>
 

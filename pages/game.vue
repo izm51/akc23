@@ -25,7 +25,7 @@
       :x="-100" :y="vh-60" :s="1" :w="vw+200"
     ></baseline>
 
-    <result v-if="partner.mode=='end'" :score="score"></result>
+    <result v-if="partner.status=='end'" :score="score"></result>
 
   </div>
 </template>
@@ -146,7 +146,7 @@ export default {
             this.$data.itemList.splice(index, 1)
 
             // 進化判定
-            if ([17, 10, 5, 0].indexOf(this.itemList.length) != -1) {
+            if ([16, 9, 0].indexOf(this.itemList.length) != -1) {
               this.partner.status = 'stop'
             }
           } else {
@@ -174,6 +174,7 @@ export default {
       this.$data.items.splice(index, 1)
     },
     async movePartner() {
+      this.partner.mode++
       this.partner.tw = new Tween(this.partner.pos)
       this.partner.status = 'walking'
       while (this.partner.status === 'walking') {
@@ -185,7 +186,7 @@ export default {
     },
     partnerStopped() {
       if (this.itemList.length != 0) {
-        this.partner.mode++
+        // this.partner.mode++
         const changeTimer = setTimeout(() => {
           this.movePartner()
           this.throwItemTiming()
@@ -205,7 +206,7 @@ export default {
       this.throwItemTiming()
     },
     gameSet() {
-      this.partner.mode = 'end'
+      this.partner.status = 'end'
       console.log("GAME SET!")
       console.log(this.score + "歳おめでとう！")
     }
@@ -230,7 +231,7 @@ export default {
   background: #fff;
   border: 1px #000 solid;
   border-radius: 50%;
-  line-height: 55vw;
+  line-height: 60vw;
   font-size: 35vw;
   text-align: center;
 }

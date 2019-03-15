@@ -14,10 +14,14 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0, user-scalable=no' },
+      { name: 'mobile-web-app-capable', content: 'yes'},
+      { name: 'apple-mobile-web-app-capable', content: 'yes'},
       { hid: 'description', name: 'description', content: pkg.title }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'shortcut icon', size: '196x196', href: '/akc23/home-icon.png'},
+      { rel: 'apple-touch-icon', href: '/akc23/home-icon.png'}
     ]
   },
 
