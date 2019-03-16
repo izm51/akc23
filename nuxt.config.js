@@ -16,7 +16,13 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0, user-scalable=no' },
       { name: 'mobile-web-app-capable', content: 'yes'},
       { name: 'apple-mobile-web-app-capable', content: 'yes'},
-      { hid: 'description', name: 'description', content: '-あけちを祝イズミ- あけちの23歳の誕生日を祝う優しいイマイズミのゲーム' }
+      { hid: 'description', name: 'description', content: 'イマイズミが投げる誕生日プレゼントをキャッチして受け取ろう！あけちの誕生日を祝う優しいイマイズミ' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'あけちを祝イズミ' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: 'https://izm51.github.io/akc23/' },
+      { hid: 'og:title', property: 'og:title', content: 'あけちを祝イズミ' },
+      { hid: 'og:description', property: 'og:description', content: 'イマイズミが投げる誕生日プレゼントをキャッチして受け取ろう！あけちの誕生日を祝う優しいイマイズミ' },
+      { hid: 'og:image', property: 'og:image', content: '/akc23/title.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
