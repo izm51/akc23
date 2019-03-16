@@ -9,7 +9,7 @@
     <div class="level">{{level}}</div>
 
     <baseline ref="baseline"
-      :x="-100" :y="vh-60" :s="1" :w="vw+200"
+      :x="-100" :y="vh-60" :s="1" :w="vw"
     ></baseline>
 
     <player ref="player"

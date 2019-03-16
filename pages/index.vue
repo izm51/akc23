@@ -15,7 +15,7 @@
         <div class="level-button" @click="$router.push('/game?level=veryhard')">VERYHARD</div>
       </div>
     </div>
-    <div class="version">ver 1.01</div>
+    <div class="version">ver 1.02</div>
   </div>
 </template>
 
