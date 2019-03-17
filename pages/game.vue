@@ -93,7 +93,8 @@ export default {
     document.body.addEventListener('touchmove', function(event) {
       const touch = event.targetTouches[0];
       self.touch_x = touch.pageX
-    }, false)
+      event.preventDefault();
+    }, {passive: false})
     document.body.addEventListener('touchstart', function(event) {
       const touch = event.targetTouches[0];
       self.touch_x = touch.pageX
