@@ -22,7 +22,7 @@ export default {
       { hid: 'og:url', property: 'og:url', content: 'https://izm51.github.io/akc23/' },
       { hid: 'og:title', property: 'og:title', content: 'あけちを祝イズミ' },
       { hid: 'og:description', property: 'og:description', content: 'イマイズミが投げる誕生日プレゼントをキャッチして受け取ろう！あけちの誕生日を祝う優しいイマイズミ' },
-      { hid: 'og:image', property: 'og:image', content: 'https://izm51.github.io/akc23/title.png' }
+      { hid: 'og:image', property: 'og:image', content: 'https://izm51.github.io/akc23/ogp.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
