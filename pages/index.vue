@@ -15,7 +15,19 @@
         <div class="level-button" @click="$router.push('/game?level=veryhard')">VERYHARD</div>
       </div>
     </div>
-    <div class="version">ver 1.03</div>
+    <div class="version">ver 1.05</div>
+    <div class="preload">
+      <img src="~assets/img/happyB.png">
+      <img src="~assets/img/sippai.png">
+      <img src="~assets/img/gift1.png">
+      <img src="~assets/img/gift2.png">
+      <img src="~assets/img/gift3.png">
+      <img src="~assets/img/gift4.png">
+      <img src="~assets/img/gift5.png">
+      <img src="~assets/img/gift6.png">
+      <img src="~assets/img/tamanegi.png">
+      <img src="~assets/img/naganegi.png">
+    </div>
   </div>
 </template>
 
@@ -67,6 +79,18 @@ export default {
     position: absolute;
     bottom: 0;
     right: 0;
+  }
+  .preload {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    img {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
   }
 }
 </style>
