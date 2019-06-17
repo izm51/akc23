@@ -1,22 +1,10 @@
 # akc23
 
-> My kickass Nuxt.js project
+https://izm51.github.io/akc23/
 
-## Build Setup
+誕生日祝いとして作成したアクションミニゲームです。  
+スマートフォンでプレイすることが出来ます。  
+(PCではブラウザの開発者モードでスマホ表示にするとプレイ可能です。)  
 
-``` bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+参考記事  
+- https://qiita.com/yuneco/items/34daf063075d03c4eede
